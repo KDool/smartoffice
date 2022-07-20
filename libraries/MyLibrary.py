@@ -52,7 +52,10 @@ class MyLibrary:
             time,title =  self.extract_f1(df,i*2)
             location,des = self.extract_f2(df,i*2+1)
             list_info = [date,time,title,location,des]
-            total_list.append(list_info)
+            if 'BigData'.lower() in des.lower() or 'Nguyễn Tất Hậu'.lower() in des.lower() or 'Nguyễn Thúc Cương'.lower() in des.lower():
+                total_list.append(list_info)
+            else:
+                continue
         return total_list
 
 
